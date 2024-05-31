@@ -6,8 +6,8 @@ import styles from './styles.module.css';
 
 export const Login = () => {
   const [count, setCount] = useState(0);
-  const [email, setEmail] = useState(0);
-  const [password, setPassword] = useState(0);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   function navigateToShop() {
@@ -30,10 +30,13 @@ export const Login = () => {
         <Input
           onChange={e => setEmail(e.target.value)}
           inputLabel={'Email'}
+          placeholder={'Coloque seu email'}
         />
         <Input
           onChange={e => setPassword(e.target.value)}
           inputLabel={'Senha'}
+          placeholder={'*******'}
+          type='password'
         />
         <div className={styles.buttonsContainers}>
           <Button
