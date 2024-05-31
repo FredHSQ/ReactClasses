@@ -6,6 +6,8 @@ import styles from './styles.module.css';
 
 export const Login = () => {
   const [count, setCount] = useState(0);
+  const [email, setEmail] = useState(0);
+  const [password, setPassword] = useState(0);
   const navigate = useNavigate();
 
   function navigateToShop() {
@@ -17,6 +19,8 @@ export const Login = () => {
   }
 
   useEffect(() => {
+    console.log(email);
+    console.log(password);
     console.log(count);
   }, [count]);
 
@@ -24,9 +28,11 @@ export const Login = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <Input
+          onChange={e => setEmail(e.target.value)}
           inputLabel={'Email'}
         />
         <Input
+          onChange={e => setPassword(e.target.value)}
           inputLabel={'Senha'}
         />
         <div className={styles.buttonsContainers}>

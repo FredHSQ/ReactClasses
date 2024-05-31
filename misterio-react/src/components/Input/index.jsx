@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-export const Input = ({ inputLabel }) => {
+export const Input = ({ inputLabel, ...rest }) => {
     return <div className={styles.labeledInput}>
         <p className={styles.label}>
-            { inputLabel }
+            {inputLabel}
         </p>
-        <input />
+        <input {...rest} />
     </div>
 };
